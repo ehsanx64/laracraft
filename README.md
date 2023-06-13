@@ -4,7 +4,7 @@ Web Application powered by Laravel
 
 ## What
 
-Laracraft is a web application using Laravel
+Laracraft is my **craft** to fly in **Lara**vel skies
 
 ## Why
 
