@@ -45,6 +45,9 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "dev": [
+            "./artisan serve --port 8888"
         ]
     },
     "extra": {

@@ -15,6 +15,18 @@ It would contain bugs, issues and malpractices and should be regarded as experim
 
 - A clean and lightweight codebase to be used in majority of Laravel/PHP projects
 
+## How to run it
+
+After clonning and entering its directory:
+
+```bash
+# Install packages using composer
+composer install
+
+# Serve the application using artisan's serve command
+composer run-script dev
+```
+
 ## TODO
 
 - [ ] Front-end template
