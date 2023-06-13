@@ -6,7 +6,9 @@ Web Application powered by Laravel
 
 Laracraft is my **craft** to fly in **Lara**vel skies
 
-It should be regarded as experimental. So think twice before using it for commercial flights :wink:. Use at your own risk.
+It would contain bugs, issues and malpractices and should be regarded as experimental. So think twice before using it for commercial flights :wink:. 
+
+**Use at your own risk.**
 
 
 ## Why
