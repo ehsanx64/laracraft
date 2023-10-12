@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,46 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', function () {
-    $out = "<ul>\n";
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-    for ($i = 0; $i < 10; $i++) {
-        $out .= sprintf("\t<li>%d</li>\n", $i);
-    }
-
-    $out .= "</ul>";
-
-    return $out;
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('test', function() {
-    return Response::json([
-        'method' => 'test',
-        'result' => [
-            'data' => [
-                [
-                    'name' => 'A',
-                    'age' => 29,
-                ],
-                [
-                    'name' => 'B',
-                    'age' => 19,
-                ],
-                [
-                    'name' => 'C',
-                    'age' => 39,
-                ],
-                [
-                    'name' => 'D',
-                    'age' => 99,
-                ],
-            ]
-        ]
-    ]);
-});
-
-// function test_handler() {
-//     return 'test_handler()';
-// }
-
-// Route::get('/test', test_handler);
+require __DIR__.'/auth.php';
