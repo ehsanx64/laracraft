@@ -12,10 +12,10 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Nunito-Variable', ...defaultTheme.fontFamily.sans],
             },
         },
     },
-
+    darkMode: 'class',
     plugins: [forms],
 };
