@@ -35,10 +35,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-    Route::get('/blog/post', [BlogController::class, 'postIndex']);
-    Route::get('/blog/category', [BlogController::class, 'categoryIndex']);
-    Route::get('/blog/tag', [BlogController::class, 'tagIndex']);
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard/blog/post', [BlogController::class, 'postIndex'])
+        ->name('dashboard_postIndex');
+
+    Route::get('/dashboard/blog/category', [BlogController::class, 'categoryIndex'])
+        ->name('dashboard_categoryIndex');
+
+    Route::get('/dashboard/blog/tag', [BlogController::class, 'tagIndex'])
+        ->name('dashboard_categoryIndex');
 });
 
 require __DIR__.'/auth.php';
