@@ -45,7 +45,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         ->name('dashboard_categoryIndex');
 
     Route::get('/dashboard/blog/tag', [BlogController::class, 'tagIndex'])
-        ->name('dashboard_categoryIndex');
+        ->name('dashboard_tagIndex');
 });
 
 require __DIR__.'/auth.php';
