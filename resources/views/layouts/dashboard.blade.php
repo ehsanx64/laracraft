@@ -25,24 +25,24 @@
                 </header>
             @endif
 
-            <!-- Sidebar -->
+            
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 <div class="flex">
-                    <div class="flex-initial basis-80 bg-gray-100 rounded text-gray-900 p-4 shadow-md">
-                        <h3>SideBar</h3>
-
+                    <!-- Sidebar -->
+                    <div class="flex-initial grow-0 w-64 bg-gray-100 rounded text-gray-900 p-4 shadow-md">
+                        <h3>SideBar</h3>                        
                         <ul class="list-none">
-                            <li>
+                            <li class="pb-2">
                                 <x-nav-link :href="route('dashboard_postIndex')" :active="request()->routeIs('dashboard_postIndex')">
                                     {{ __('Blog Posts') }}
                                 </x-nav-link>
                             </li>
-                            <li>
+                            <li class="pb-2">
                                 <x-nav-link :href="route('dashboard_categoryIndex')" :active="request()->routeIs('dashboard_categoryIndex')">
                                     {{ __('Blog Categories') }}
                                 </x-nav-link>
                             </li>
-                            <li>
+                            <li class="pb-2">
                                 <x-nav-link :href="route('dashboard_tagIndex')" :active="request()->routeIs('dashboard_tagIndex')">
                                     {{ __('Blog Tags') }}
                                 </x-nav-link>
@@ -50,8 +50,8 @@
                         </ul>
                     </div>
 
-                    <div class="flex-1 grow">
-                        <!-- Page Content -->
+                    <!-- Page Content -->
+                    <div class="flex-1 px-4">
                         <main>
                             @isset($slot)
                                 {{ $slot }}
