@@ -212,4 +212,7 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    'features' => [
+        'register_enabled' => env('FEAT_REGISTER_ENABLED', false),
+    ],
 ];

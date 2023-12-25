@@ -8,6 +8,11 @@
         <ul>
             <li><a class="hover:fg-red" href="{{ url('/login') }}">Login</a></li>
         </ul>
+
+        <p>System Information:</p>
+        <ul>
+            <li><b>Register Enabled:&nbsp;</b>@if (config('app.features.register_enabled'))<b>Yes</b>@else<b>No</b>@endif</li>
+        </ul>
     </div>
     
 @endsection
