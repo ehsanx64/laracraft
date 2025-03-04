@@ -1,0 +1,27 @@
+nav {
+    .branding {
+        h1 {
+            a {
+                font-size: 16px;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .navigation {
+        ul > li {
+            a {
+                display: block;
+
+                &.active::after {
+                    content: " ";
+                    border-bottom: 4px solid oklch(0.623 0.214 259.815);
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
