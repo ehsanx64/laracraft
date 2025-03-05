@@ -58,38 +58,37 @@
                     </span>
                     <div x-show="open" @click.outside="open = false" 
                     class="absolute bg-black right-8 top-14">
-                    <ul>
-                        <li>
-                            <button x-on:click="profile_archive"
-                            class="py-4 px-8 w-full hover:bg-indigo-300 min-w-48 text-left cursor-pointer">Archive</button>
-                        </li>
-                        <li>
-                            <button x-on:click="profile_delete"
-                            class="py-4 px-8 w-full hover:bg-indigo-300 min-w-48 text-left cursor-pointer">Delete</button>
-                        </li>
-                    </ul>
+                        <ul>
+                        @auth
+                            <li>
+                                <a href="{{ url('/dashboard') }}"
+                                class="py-4 px-8 w-full hover:bg-indigo-300 min-w-48 text-left
+                                cursor-pointer block">
+                                    Dashboard
+                                </a>
+                            </li>
+                        @else
+                            <li>
+                                <a href="{{ route('login') }}"
+                                class="py-4 px-8 w-full hover:bg-indigo-300 min-w-48 text-left
+                                cursor-pointer block">
+                                    Log in
+                                </a>
+                            </li>
 
+                            @if (Route::has('register'))
+                            <li>
+                                <a href="{{ route('register') }}"
+                                class="py-4 px-8 w-full hover:bg-indigo-300 min-w-48 text-left
+                                cursor-pointer block">
+                                    Register
+                                </a>
+                            </li>
+                            @endif
+                        @endauth
+                        </ul>
                     </div>
                 </div>
-                
-                @auth
-                <!-- <a href="{{ url('/dashboard') }}"
-                    class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
-                    Dashboard
-                </a> -->
-                @else
-                <!-- <a href="{{ route('login') }}"
-                    class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal">
-                    Log in
-                </a> -->
-
-                @if (Route::has('register'))
-                <!-- <a href="{{ route('register') }}"
-                    class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
-                    Register
-                </a> -->
-                @endif
-                @endauth
             </div>
         </nav>
         @endif
