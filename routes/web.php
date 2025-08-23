@@ -1,5 +1,4 @@
 <?php
-// Web route definitions
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
